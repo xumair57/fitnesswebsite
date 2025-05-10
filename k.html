@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Raleway:wght@400;700&amp;display=swap" rel="stylesheet" />
+
+    <style>
+        .slider {
+    position: relative; /* Positioning for absolute children */
+    overflow: hidden; /* Hide overflow */
+    width: 100%; /* Full width */
+    height: calc(100vh - 40px); /* Full height minus any padding */
+}
+
+.slide {
+    opacity: 0; /* Initially hidden */
+    transform: translateX(100%); /* Start off-screen to the right */
+    transition: opacity 0.1s ease, transform 1.0s ease; /* Transition for smooth effect */
+    position: absolute; /* Positioning to overlap slides */
+    width: 100%; /* Ensure full width */
+    height: calc(100% - 40px); /* Adjust height */
+}
+
+    .slide.active {
+        opacity: 1; /* Fully visible */
+        transform: translateX(0); /* Move to original position */
+    }
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 35px;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrow-left {
+    left: 20px;
+}
+
+.arrow-right {
+    right: 20px;
+}
+    </style>
+</head>
+<body>
+    <section class="h-screen flex items-center fade-in" style="background-color: #071104;">
+        <div class="border-1 border-white w-full p-10 max-w-9xl mx-auto px-4 h-full flex items-center relative slider">
+            <div class="w-full p-10 flex flex-col md:flex-row items-center slide active">
+                <div class="md:w-1/2 p-4">
+                    <h3 class="text-2xl font-bold text-white" style="font-family: 'Times New Roman', Times, serif; font-size: 30px; letter-spacing: 5px;">Weight Gain</h3>
+                    <br /> <p class="text-lg text-white mt-4">
+                        Muscle mass isn't built overnight eat, train, and recover smartly!"
+"Healthy weight gain comes from balanced nutrition, not just calories."
+                    </p>
+                    <br />
+                    <a class="mt-6 px-6 py-3 text-white text-lg" id="btn" asp-area="" asp-page="/Privacy">Learn more!</a>
+                </div>
+                <div class="md:w-1/2 p-4">
+                    <img alt="A bride and groom in a beautifully decorated venue"
+                         src="triceps dips.jpeg"
+                         style="width: 80%; height: 450px; max-height: 600px; object-fit: cover;" />
+                </div>
+            </div>
+    
+            <div class="w-full p-10 flex flex-col md:flex-row items-center slide">
+                <div class="md:w-1/2 p-4">
+                    <h3 class="text-2xl font-bold text-white" style="font-family: 'Times New Roman', Times, serif; font-size: 30px; letter-spacing: 5px;">Healthy weight loss</h3>
+                    <br />
+                    <p class="text-lg text-white mt-4">
+                        Weight loss is not a sprint, it's a lifestyle."
+"Burn calories, not motivation!"
+"Sweat today, shine tomorrow."
+"Small changes lead to big results"
+                    </p>
+                    <br />
+                    <a class="mt-6 px-6 py-3 text-white text-lg" id="btn" asp-area="" asp-page="/Privacy">Learn more!</a>
+                </div>
+                <div class="md:w-1/2 p-4">
+                    <img alt="A birthday celebration"
+                         src="yoga.jpeg"
+                         style="width: 80%; height: 450px; max-height: 600px; object-fit: cover;" />
+                </div>
+            </div>
+    
+            <!-- Left Arrow -->
+            <button class="arrow arrow-left" id="prevSlide"> <i class="fas fa-chevron-left arrow-icon"></i></button>
+            <!-- Right Arrow -->
+            <button class="arrow arrow-right" id="nextSlide"> <i class="fas fa-chevron-right arrow-icon"></i></button>
+        </div>
+    </section>
+    
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+    
+        // Show the first slide
+        slides[currentSlide].classList.add('active');
+    
+        document.getElementById('nextSlide').addEventListener('click', function() {
+            slides[currentSlide].classList.remove('active'); // Hide current slide
+            currentSlide = (currentSlide + 1) % slides.length; // Move to next slide
+            slides[currentSlide].classList.add('active'); // Show next slide
+        });
+    
+        document.getElementById('prevSlide').addEventListener('click', function() {
+            slides[currentSlide].classList.remove('active'); // Hide current slide
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length; // Move to previous slide
+            slides[currentSlide].classList.add('active'); // Show previous slide
+        });
+    </script>
+</body>
+</html>

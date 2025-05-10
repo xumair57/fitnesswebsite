@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OxyFyKin fitness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="1page.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Raleway:wght@400;700&amp;display=swap" rel="stylesheet" />
+    
+    </style>
+</head>
+<body>
+    <header>
+        <img src="fit icon.jpeg" alt="KashGoals Icon" class="favicon">
+        <div class="logo">
+            
+            <h2>OxyFyKin</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="pr2.html">Home</a></li>
+                <li><a href="featured .html">Programs</a></li>
+                <li><a href="pricing.html">Plans</a></li>
+                <li><a href="exercise.html">exercise</a></li>
+                <li><a href="about us.html">About</a></li>
+                <li><a href="bmi.html">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <a href="cart.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+        <a href="userdashboard1.html" class="user-icon">
+            <i class="fas fa-user"></i> 
+        </a>
+    </header>
+
+    <section class="hero">
+        <h1>Premium <span style="color: #FF6B35;">24/7</span> Fitness Experience</h1>
+        <p>Transform your life with our state-of-the-art facilities and expert guidance</p>
+        <a href="join.html" class="cta-button">Start Your Journey</a>
+    </section>
+   
+    <div class="container" id="revealSection" style="width: 100%;">
+        <div class="text-content" style="width: 100%;">
+            <h1 style="color: #FF6B35;">Fitness And Health</h1>
+            <p class="typing-text" id="typingText" style="width: 100%;"></p> 
+        </div>
+        <div class="image-content" id="imageContent"style="width: 100%;">
+            <img src="dumbelle.jpeg" alt="Dumbbell" style="vertical-align: middle; margin-right: 20px;">
+        </div>
+    </div>
+    <section class="h-screen flex items-center fade-in" style="background-color: #071104;">
+        <div class="border-1 border-white w-full p-10 max-w-9xl mx-auto px-4 h-full flex items-center relative slider">
+            <div class="w-full p-10 flex flex-col md:flex-row items-center slide active">
+                <div class="md:w-1/2 p-4">
+                    <h3 class="text-2xl font-bold text-white" style="font-family: 'Times New Roman', Times, serif; font-size: 30px; letter-spacing: 5px;">Weight Gain</h3>
+                    <br /> <p class="text-lg text-white mt-4">
+                        Muscle mass isn't built overnight eat, train, and recover smartly!"
+"Healthy weight gain comes from balanced nutrition, not just calories."
+                    </p>
+                    <br />
+                    <a class="mt-6 px-6 py-3 text-white text-lg" id="btn" asp-area="" asp-page="/Privacy">Learn more!</a>
+                </div>
+                <div class="md:w-1/2 p-4">
+                    <img alt="A bride and groom in a beautifully decorated venue"
+                         src="triceps dips.jpeg"
+                         style="width: 80%; height: 450px; max-height: 600px; object-fit: cover;" />
+                </div>
+            </div>
+    
+            <div class="w-full p-10 flex flex-col md:flex-row items-center slide">
+                <div class="md:w-1/2 p-4">
+                    <h3 class="text-2xl font-bold text-white" style="font-family: 'Times New Roman', Times, serif; font-size: 30px; letter-spacing: 5px;">Healthy weight loss</h3>
+                    <br />
+                    <p class="text-lg text-white mt-4">
+                        Weight loss is not a sprint, it's a lifestyle."
+"Burn calories, not motivation!"
+"Sweat today, shine tomorrow."
+"Small changes lead to big results"
+                    </p>
+                    <br />
+                    <a class="mt-6 px-6 py-3 text-white text-lg" id="btn" asp-area="" asp-page="/Privacy">Learn more!</a>
+                </div>
+                <div class="md:w-1/2 p-4">
+                    <img alt="A birthday celebration"
+                         src="yoga.jpeg"
+                         style="width: 80%; height: 450px; max-height: 600px; object-fit: cover;" />
+                </div>
+            </div>
+    
+            
+            <button class="arrow arrow-left" id="prevSlide"> <i class="fas fa-chevron-left arrow-icon"></i></button>
+            
+            <button class="arrow arrow-right" id="nextSlide"> <i class="fas fa-chevron-right arrow-icon"></i></button>
+        </div>
+    </section>
+    <section class="yoga-section" style="background-color: #010f0a;">
+        <div class="content-image">
+            <img src="cardio.jpeg" alt="Yoga Practice">
+        </div>
+        <div class="content-text">
+            <h2>Holistic Wellness Programs</h2>
+            <ul>
+                <li>Customized yoga sessions for all levels</li>
+                <li>Stress management techniques</li>
+                <li>Mindfulness meditation programs</li>
+                <li>Posture correction therapy</li>
+                <li>Breathing exercise workshops</li>
+            </ul>
+        </div>
+    </section>
+    <div class="container1" style="background-color: #010f0a;">
+        <div class="content1">
+          <h1 style="color: #FF6B35; font-size: 35px;">Healthy Eats</h1><br><br>
+          <h3 style="color: white; font-size: 20px;" >Eating healthy is key to maintaining a balanced and energetic lifestyle. A balanced diet helps provide the body with all the nutrients it needs to function optimally. Whether you're looking to lose weight, gain muscle, or simply improve your overall well-being, healthy eating is the foundation for achieving your goals.</h3>
+        </div>
+    
+        <div class="image1-container">
+          <img src="he2.jpeg" alt="Healthy Eat 1" id="healthyImage">
+          <button class="arrow prev" onclick="changeImage(-1)">&#10094;</button>
+          <button class="arrow next" onclick="changeImage(1)">&#10095;</button>
+        </div>
+      </div>
+    
+    <section class="services-section">
+        <h2 class="section-heading">Expert Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="d1.jpeg" class="service-image" alt="Nutrition Expert">
+                <div class="service-info">
+                    <h3 class="service-title">Nutrition Planning</h3>
+                    <p class="service-price">From $99/session</p>
+                    <a href="featured .html" class="booking-button">Book Consultation</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="d2.jpeg" class="service-image" alt="Personal Training">
+                <div class="service-info">
+                    <h3 class="service-title">Personal Training</h3>
+                    <p class="service-price">From $79/session</p>
+                    <a href="pricing.html" class="booking-button">Start Training</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="d3.jpeg" class="service-image" alt="Physiotherapy">
+                <div class="service-info">
+                    <h3 class="service-title">Physiotherapy</h3>
+                    <p class="service-price">From $129/session</p>
+                    <a href="join.html" class="booking-button">Book Session</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <h3 style="color: antiquewhite;">&copy; All Rights are Reserved</h3>
+    </footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let section = document.getElementById("revealSection");
+        let textElement = document.getElementById("typingText");
+        let image = document.getElementById("imageContent");
+
+        let text = "Fitness is crucial because it boosts both physical and mental well-being. When you prioritize your health, you’re investing in a long, vibrant life. Regular exercise helps prevent diseases, strengthens your immune system, and keeps your body functioning optimally. A healthy body leads to a sharper mind, increased energy levels, and improved mood.";
+
+        let index = 0;
+        let isTyping = false;
+
+        function typeText() {
+            if (index < text.length) {
+                textElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeText, 30); // Typing speed
+            } else {
+                textElement.style.borderRight = "none"; // Remove cursor after typing
+            }
+        }
+
+        function checkScroll() {
+            let rect = section.getBoundingClientRect();
+            let windowHeight = window.innerHeight;
+
+            if (rect.top < windowHeight * 0.75 && !isTyping) { // Trigger when 75% visible
+                section.classList.add("visible");
+                image.classList.add("visible");
+                isTyping = true;
+                typeText();
+            }
+        }
+
+        window.addEventListener("scroll", checkScroll);
+    });
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    
+    // Show the first slide
+    slides[currentSlide].classList.add('active');
+    
+    document.getElementById('nextSlide').addEventListener('click', function() {
+        slides[currentSlide].classList.remove('active'); // Hide current slide
+        currentSlide = (currentSlide + 1) % slides.length; // Move to next slide
+        slides[currentSlide].classList.add('active'); // Show next slide
+    });
+    
+    document.getElementById('prevSlide').addEventListener('click', function() {
+        slides[currentSlide].classList.remove('active'); // Hide current slide
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length; // Move to previous slide
+        slides[currentSlide].classList.add('active'); // Show previous slide
+    });
+
+    // Updated image array - ensure these paths are correct
+    const images = [
+            'he1.jpeg',
+            'he2.jpeg',
+            'he3.jpeg',
+            'he4.jpeg'
+        ];
+
+        let currentIndex = 0;
+
+        function changeImage(step) {
+            currentIndex = (currentIndex + step + images.length) % images.length;
+            document.getElementById('healthyImage').src = images[currentIndex];
+        }
+</script>
+
+</body>
+</html>

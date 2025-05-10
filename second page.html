@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OxyFyKin Fitness Center</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --secondary: #2EC4B6;
+            --dark: #1A2930;
+            --dark-alt: #0A1612;
+            --light: #FDFFFC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--dark-alt);
+            color: var(--light);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--dark), var(--dark-alt));
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .logo h2 {
+            font-size: 2rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cart-icon {
+            color: var(--light);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .cart-icon:hover {
+            color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 80px;
+            background: linear-gradient(rgba(26, 41, 48, 0.9), rgba(10, 22, 18, 0.9)),
+                        url('fh1.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 0 5%;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: var(--light);
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,107,53,0.4);
+        }
+
+        /* Owner Section */
+        .owner-section {
+            padding: 6rem 5%;
+            background: var(--dark);
+            text-align: center;
+        }
+
+        .owner-section h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .owner-section h1 {
+            font-size: 2.8rem;
+            margin: 1rem 0;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .owner-section h3:last-child {
+            font-size: 1.4rem;
+            color: var(--light);
+            margin-top: 2rem;
+            font-style: italic;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 6rem 5%;
+            background: var(--dark-alt);
+        }
+
+        .section-heading {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: var(--dark);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .service-info {
+            padding: 2rem;
+        }
+
+        .service-title {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-price {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .booking-button {
+            background: var(--primary);
+            color: var(--light);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .booking-button:hover {
+            background: var(--secondary);
+        }
+
+        /* Yoga Section */
+        .yoga-section {
+            display: flex;
+            gap: 2rem;
+            padding: 6rem 5%;
+            background: var(--dark);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .yoga-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .content-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .content-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content-image:hover {
+            transform: scale(1.02);
+        }
+
+        .content-text {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .content-text h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-text ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .content-text li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .content-text li:before {
+            content: "✓";
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: black;
+            color: var(--light);
+            text-align: center;
+            padding: 20px 10%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .yoga-section {
+                flex-direction: column;
+            }
+            
+            .section-heading {
+                font-size: 2rem;
+            }
+        }
+
+        .container {
+            display: flex;
+            width: 100%; /* Full width */
+            background-color: white; /* White background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .text-content {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .text-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .text-content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .image-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0e0e0; /* Light gray background for image section */
+        }
+
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .content {
+            width: 55%;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .content h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            position: relative;
+            width: 60%;
+            height: 400px; /* Fixed height for the image container */
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%; /* Make the image fit the container */
+            height: 100%; /* Set image height to match container height */
+            object-fit: cover; /* Ensures the image fills the area without distortion */
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 20px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .favicon {
+            width: 80px;  /* Set the desired smaller size */
+            height: 80px; /* Make it a square */
+            border-radius: 50%;  /* Circular shape */
+            object-fit: cover; 
+            border: 2px solid #22d3ee; /* Ensures the image fits within the circle without distortion */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="fit icon.jpeg" alt="KashGoals Icon" class="favicon">
+        <div class="logo">
+            <h2>OxyFyKin</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="pr2.html">Home</a></li>
+                <li><a href="featured .html">Programs</a></li>
+                <li><a href="pricing.html">Plans</a></li>
+                <li><a href="exercise.html">exercise</a></li>
+                <li><a href="about us.html">About</a></li>
+                <li><a href="k.html">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <a href="cart.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+        <a href="userdashboard1.html" class="user-icon">
+            <i class="fas fa-user"></i> <!-- User icon -->
+        </a>
+    </header>
+
+    <section class="hero">
+        <h1>Premium <span style="color: #FF6B35;">24/7</span> Fitness Experience</h1>
+        <p>Transform your life with our state-of-the-art facilities and expert guidance</p>
+        <a href="join.html" class="cta-button">Start Your Journey</a>
+    </section>
+
+    <div class="container" style="background-color: white;">
+        <div class="text-content">
+            <h1 style="color: #FF6B35;">Fitness And Health</h1>
+            <p style="color: #0A1612;">Fitness is crucial because it boosts both physical and mental well-being. When you prioritize your health, you’re investing in a long, vibrant life. Regular exercise helps prevent diseases, strengthens your immune system, and keeps your body functioning optimally. A healthy body leads to a sharper mind, increased energy levels, and improved mood<br><br>
+            <br>
+        <br></p>
+        </div>
+        <div class="image-content" style="background-color: white;">
+            <img src="dumbelle.jpeg" alt="Dumbbell">
+        </div>
+    </div>
+
+    <section class="yoga-section" style="background-color: #031d14;">
+        <div class="content-image">
+            <img src="cardio.jpeg" alt="Yoga Practice">
+        </div>
+        <div class="content-text">
+            <h2>Holistic Wellness Programs</h2>
+            <ul>
+                <li>Customized yoga sessions for all levels</li>
+                <li>Stress management techniques</li>
+                <li>Mindfulness meditation programs</li>
+                <li>Posture correction therapy</li>
+                <li>Breathing exercise workshops</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="container" style="background-color: #154118;">
+        <div class="content">
+          <h1 style="color: #FF6B35;">Healthy Eats</h1>
+          <h3 style="color: black;">Eating healthy is key to maintaining a balanced and energetic lifestyle. A balanced diet helps provide the body with all the nutrients it needs to function optimally. Whether you're looking to lose weight, gain muscle, or simply improve your overall well-being, healthy eating is the foundation for achieving your goals.</h3>
+        </div>
+    
+        <div class="image-container">
+          <img src="he2.jpeg" alt="Healthy Eat 1" id="healthyImage">
+          <button class="arrow prev" onclick="changeImage(-1)">&#10094;</button>
+          <button class="arrow next" onclick="changeImage(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <section class="services-section">
+        <h2 class="section-heading">Expert Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="d1.jpeg" class="service-image" alt="Nutrition Expert">
+                <div class="service-info">
+                    <h3 class="service-title">Nutrition Planning</h3>
+                    <p class="service-price">From $99/session</p>
+                    <a href="featured .html" class="booking-button">Book Consultation</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="d2.jpeg" class="service-image" alt="Personal Training">
+                <div class="service-info">
+                    <h3 class="service-title">Personal Training</h3>
+                    <p class="service-price">From $79/session</p>
+                    <a href="pricing.html" class="booking-button">Start Training</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="d3.jpeg" class="service-image" alt="Physiotherapy">
+                <div class="service-info">
+                    <h3 class="service-title">Physiotherapy</h3>
+                    <p class="service-price">From $129/session</p>
+                    <a href="join.html" class="booking-button">Book Session</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3 style="color: antiquewhite;">&copy; All Rights are Reserved</h3>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const images = [
+          'he1.jpeg',
+          'he2.jpeg',
+          'he3.jpeg',
+          'he4.jpeg',
+        ];
+
+        function changeImage(step) {
+          currentIndex = (currentIndex + step + images.length) % images.length;
+          document.getElementById('healthyImage').src = images[currentIndex];
+        }
+
+        // Scroll Animation Logic
+        const sections = document.querySelectorAll('.container, .yoga-section, .service-card');
+
+        const checkVisibility = () => {
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const sectionBottom = section.getBoundingClientRect().bottom;
+                if (sectionTop < window.innerHeight && sectionBottom > 0) {
+                    section.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', checkVisibility);
+        window.addEventListener('load', checkVisibility);
+    </script>
+</body>
+</html>

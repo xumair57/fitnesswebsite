@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured - Fitness Center</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link  rel="stylesheet" href="header.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+
+
+
+footer {
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+}
+
+
+section {
+    padding: 40px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.program-container, .trainer-container, .testimonial-container, .plan-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.program, .trainer, .testimonial, .plan {
+    background-color: #f4f4f4;
+    padding: 20px;
+    width: 30%;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.program img, .trainer img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+#cta {
+    background-color: #222;
+    color: #fff;
+    padding: 40px;
+}
+
+
+.center {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="center">
+        <div class="icon-left">
+            <img src="fit icon.jpeg" alt="KashGoals Icon" class="favicon">
+        </div>
+        
+    
+        <div class="logo">
+            <h2><span style="color: #f05323;">OxyFyKin</span></h2>
+        </div>
+    
+        <nav>
+        <ul>
+            <li><a href="first page.html">Home</a></li>
+            <li><a href="featured .html">program</a></li>
+            <li><a href="pricing.html">Plans</a></li>
+            <li><a href="pricing.html">exercise</a></li>
+            <li><a href="about us.html" >About us</a></li>
+            <li><a href="bmi.html" >BMI</a></li>
+        </ul>
+    </nav>
+        
+        
+                        <div class="cart-icon">
+                            <a href="cart.html" target="_blank">
+                            <i class="fas fa-shopping-cart"></i>
+                            </a>
+                        </div>
+                        <a href="userdashboard1.html " class="user-icon">
+        <i class="fas fa-user"></i> <!-- User icon -->
+    </a>
+    </header>
+    <!-- Featured Programs Section -->
+    <section id="programs">
+        <h2>Our Featured Programs</h2>
+        <div class="program-container">
+            <div class="program">
+                <img src="yoga.jpeg" alt="Yoga">
+                <h3>Yoga</h3>
+                <p>Find inner peace and flexibility with our expert yoga classes.</p>
+            </div>
+            <div class="program">
+                <img src="cardio.jpeg" alt="Cardio">
+                <h3>Cardio</h3>
+                <p>Boost your stamina and endurance with our cardio training.</p>
+            </div>
+            <div class="program">
+                <img src="strength.jpeg" alt="Strength Training">
+                <h3>Strength Training</h3>
+                <p>Build muscle and strength with personalized training sessions.</p>
+            </div>
+        </div>
+        <div class="program-container">
+            <div class="program">
+                <img src="wall sits.jpeg" alt="Yoga" height="64%">
+                <h3>Exercise</h3>
+                <p>Find inner peace and flexibility with our expert home exercises classes.</p>
+            </div>
+            <div class="program">
+                <img src="zumbe.jpeg" alt="Cardio">
+                <h3>zumba dance</h3>
+                <p>Boost your stamina and endurance with our zumba dance training.</p>
+            </div>
+            <div class="program">
+                <img src="yogss.jpeg" alt="Strength Training">
+                <h3>mediatation Training</h3>
+                <p>Build muscle and strength with personalized training sessions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainer Highlights Section -->
+    <section id="trainers">
+        <h2>Meet Our Trainers</h2>
+        <div class="trainer-container">
+            <div class="trainer">
+                <img src="trainer.jpeg" alt="Trainer 1" height="60%">
+                <h3>Khalil</h3>
+                <p>Certified fitness trainer with 10+ years of experience.<br>
+                    satisfied 100+ customers<br>
+                    always help to achieve goal
+
+                </p>
+            </div>
+            <div class="trainer">
+                <img src="female trainer.jpeg" alt="Trainer 2">
+                <h3>Muhmmad Ahmed</h3>
+                <p>Expert in strength training and body sculpting.Certified fitness trainer with 10+ years of experience.<br>
+                    satisfied 100+ customers<br>
+                    always help to achieve goal
+</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>What Our Members Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <p>"This fitness center has changed my life! The trainers are amazing and the programs are top-notch!"</p>
+                <p>- Mubeen, Member</p>
+            </div>
+            <div class="testimonial">
+                <p>"I’ve seen incredible results in just 3 months. I highly recommend their cardio program."</p>
+                <p>- Aliza, Member</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Plans Section -->
+    <section id="membership">
+        <h2>Choose Your Plan</h2>
+        <div class="plan-container">
+            <div class="plan">
+                <h3>Basic Plan</h3>
+                <p>$20/month</p>
+                <button class="join-btn"><a href="pricing.html">Join Now</a></button>
+            </div>
+            <div class="plan">
+                <h3>Premium Plan</h3>
+                <p>$50/month</p>
+                <button class="join-btn"><a href="pricing.html">Join Now</a></button>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="cta">
+        <h2>Ready to Transform Your Body?</h2>
+        <button class="cta-btn" ><a href="join.html">join now</a></button>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <h3 style="color: antiquewhite;">&copy; All Rights are Reserved</h3>
+    </footer>  
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Center</title>
+    <link rel="stylesheet" href="fit.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="header.css">
+   <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+.video-container {
+    position: relative;
+    width: 100%;        
+    height: 240px;     
+    overflow: hidden;   
+}
+
+
+#header-video {
+    position: absolute;
+    top: 50%;           
+    left: 50%;          
+    width: 100%;        
+    height: 100%;      
+    object-fit: cover;  
+    transform: translate(-50%, -50%); 
+    z-index: 1;         
+}
+
+.video-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 2;         
+}
+
+
+
+
+
+.about-section, .team-section, .mission-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1rem;
+    color: whitesmoke;
+}
+
+   </style> 
+</head>
+<header class="center">
+    <div class="icon-left">
+        <img src="fit icon.jpeg" alt="KashGoals Icon" class="favicon">
+    </div>
+    
+
+    <div class="logo">
+        <h2><span style="color: #f05323;">OxyFyKin</span></h2>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="first page.html">Home</a></li>
+            <li><a href="featured .html">program</a></li>
+            <li><a href="pricing.html">Plans</a></li>
+            <li><a href="pricing.html">exercise</a></li>
+            <li><a href="about us.html" >About us</a></li>
+            <li><a href="bmi.html" >BMI</a></li>
+        </ul>
+    </nav>
+    
+    <div class="cart-icon">
+        <a href="cart.html" target="_blank">
+        <i class="fas fa-shopping-cart"></i>
+        </a>
+        <a href="userdashboard1.html " class="user-icon">
+            <i class="fas fa-user"></i> <!-- User icon -->
+        </a>
+    </div>
+    </header>
+    <body>
+        <div class="video-container">
+            <video autoplay muted loop id="header-video">
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay"></div>
+            <h1 class="header-title">
+                Welcome to <span style="color: #f05323;">OxyFyKin</span> Fitness Heaven </h1>
+    
+        </div>
+
+        <section class="about-section">
+            <h2>Our Story</h2>
+            <p>We are passionate about helping individuals achieve their fitness goals through personalized training and the best workout programs. Our app was created to provide an easy-to-use platform where fitness enthusiasts can track their progress, follow workout routines, and engage with expert trainers.</p>
+        </section>
+    
+        <section class="team-section">
+            <h2>Meet The Team</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="d2.jpeg" alt="Trainer 1">
+                    <h3>Mubeen</h3>
+                    <p style="color: black;" >Fitness Trainer</p>
+                </div>
+                <div class="team-member">
+                    <img src="d3.jpeg" alt="Trainer 2">
+                    <h3>Umair</h3>
+                    <p style="color: black;">Fitness Trainer</p>
+                </div>
+                <div class="team-member">
+                    <img src="d1.jpeg" alt="Developer">
+                    <h3>Aliza</h3>
+                    <p style="color: black;">App Developer</p>
+                </div>
+            </div>
+        </section>
+    
+        <section class="mission-section">
+            <h2>Our Mission</h2>
+            <p>Our mission is to inspire and empower individuals to lead healthier and more active lives through a user-friendly platform that encourages fitness, wellness, and personal growth.</p>
+        </section>
+    
+        
+    
+        <script>
+$(document).ready(function() {
+    // Smooth scroll for anchor links
+    $('a').on('click', function(e) {
+        if (this.hash !== "") {
+            e.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function() {
+                window.location.hash = hash;
+            });
+        }
+    });
+
+    // Fade-in effect for sections
+    $(window).on('scroll', function() {
+        $('.about-section, .team-section, .mission-section').each(function() {
+            if ($(this).offset().top < $(window).scrollTop() + $(window).height()) {
+                $(this).fadeIn(1000);
+            }
+        });
+    });
+
+    // Initially fade in the sections
+    $('.about-section, .team-section, .mission-section').hide();
+    $(window).trigger('scroll');
+});
+
+        </script>
+         <footer>
+            <h3 style="color: antiquewhite;">&copy; All Rights are Reserved</h3>
+        </footer>  
+    </body>
+    </html>
+    </body>

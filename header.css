@@ -1,0 +1,92 @@
+:root {
+    --primary: #FF6B35;
+    --secondary: #2EC4B6;
+    --dark: #1A2930;
+    --dark-alt: #0A1612;
+    --light: #FDFFFC;
+}
+
+.favicon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #22d3ee;
+}
+
+header {
+    background: linear-gradient(135deg, var(--dark), var(--dark-alt));
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    max-width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.logo h2 {
+    font-size: 2rem;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.cart-icon, .user-icon {
+    color: var(--light);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+    margin-left: 1rem;  /* Add margin to prevent overlap */
+}
+
+.cart-icon:hover, .user-icon:hover {
+    color: var(--primary);
+    transform: scale(1.1);
+}
+header{
+    width: 100%;
+}
+footer {
+    background-color: #0A1612;
+    color: var(--light);
+    text-align: center;
+    padding: 20px 10%;
+  }
+
+  footer p {
+    margin: 0;
+  }

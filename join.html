@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    
+    <link  rel="stylesheet" href="header.css">
+    <title>Fitness Center</title>
+    <link rel="stylesheet" href="fit.css">
+    <style>
+        body{
+            background-image: linear-gradient(to right, #04274b, #0b0f13);
+        }
+        p,li,h2{
+            color: #0b0f13;
+        }
+        
+        .div1{
+            background-color: #e6f2ff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            margin: auto;
+        }
+        
+        
+        button{
+            background-color: #4da6ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover{
+            background-color: #1a8cff;
+        }
+    
+        #nextBtn, #retakeBtn{
+            width: 600px;
+        }
+       
+    </style>
+    
+</head>
+<header class="center">
+    <div class="icon-left">
+        <img src="fit icon.jpeg" alt="KashGoals Icon" class="favicon">
+    </div>
+    
+
+    <div class="logo">
+        <h2><span style="color: #f05323;">OxyFyKin</span></h2>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="first page.html">Home</a></li>
+            <li><a href="pricing.html">Product</a></li>
+            <li><a href="featured .html">Featured</a></li>
+            <li><a href="about us.html" >About us</a></li>
+            <li><a href="bmi.html" >contact Us</a></li>
+        </ul>
+    </nav>
+    
+    
+                    <div class="cart-icon">
+                        <a href="cart.html" target="_blank">
+                        <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </div>
+                    <a href="userdashboard1.html " class="user-icon">
+                        <i class="fas fa-user"></i> <!-- User icon -->
+                    </a>
+</header>
+<br>
+<br>
+<br>
+<br>
+<body>
+
+<div class="div1">
+<h2>Your Fitness</h2>
+<div class="question" id="question1">
+    <p>What is your primary fitness goal?</p>
+    
+    <ul>
+        <li><input type="radio" name="q1" value="A"> A) lose weight</li>
+        <li><input type="radio" name="q1" value="B"> B) build muscle</li>
+        <li><input type="radio" name="q1" value="C"> C) improve Flexibility</li>
+        <li><input type="radio" name="q1" value="D"> D) enhance overall health</li>
+    </ul>
+</div>
+
+<div class="question" id="question2">
+    <p>2. What motivates you to stay active?</p>
+    
+    <ul>
+        <li><input type="radio" name="q2" value="A"> A) feeling healthy</li>
+        <li><input type="radio" name="q2" value="B"> B) looking good</li>
+        <li><input type="radio" name="q2" value="C"> C) competing in health</li>
+        <li><input type="radio" name="q2" value="D"> D) reducing stress</li>
+    </ul>
+</div>
+
+<div class="question" id="question3">
+    <p>3. What type of fitness class are you interested?</p>
+    
+    <ul>
+        <li><input type="radio" name="q3" value="A"> A) yoga</li>
+        <li><input type="radio" name="q3" value="B"> B) palates</li>
+        <li><input type="radio" name="q3" value="C"> C) cardio</li>
+        <li><input type="radio" name="q3" value="D"> D) weight lifting</li>
+    </ul>
+</div>
+
+<div class="question" id="question4">
+    <p>4. What time best for you to attend classes?</p>
+    
+    <ul>
+        <li><input type="radio" name="q4" value="A"> A) morning</li>
+        <li><input type="radio" name="q4" value="B"> B) afternoon</li>
+        <li><input type="radio" name="q4" value="C"> C) evening</li>
+        <li><input type="radio" name="q4" value="D"> D) late evening</li>
+    </ul>
+</div>
+
+<div class="question" id="question5">
+    <p>5. how often do you plan to visit fitness center?</p>
+    
+    <ul>
+        <li><input type="radio" name="q5" value="A"> A) 1-2 times a week</li>
+        <li><input type="radio" name="q5" value="B"> B) 3-4 times a week</li>
+        <li><input type="radio" name="q5" value="C"> C) 5-6 times a week</li>
+        <li><input type="radio" name="q5" value="D"> D)  a week</li>
+    </ul>
+</div>
+
+<button type="button" id="nextBtn" onclick="next()">Next Question</button>
+
+<div id="result" style="display: none; margin-top: 20px;">
+    <h3>Your Results</h3>
+    <p id="score"></p>
+    <button type="button" id="retakeBtn" onclick="retakeQuiz()">Retake Quiz</button>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<div class="pre-footer">
+    <div class="logo">
+        <img src="fit icon.jpeg" alt="KashGoals Logo">
+    </div>
+    <div class="contact-details">
+        <h4>Contact Us</h4>
+        <p>Email: support@kashgoals.com</p>
+        <p>Phone: +123-456-7890</p>
+    </div>
+    <div class="terms">
+        <a href="#">Terms of Service</a>
+    </div>
+    <div class="app-install">
+        <a href="https://www.playstore.com">Install App</a>
+    </div>
+    <div class="account">
+        <a href="https://www.instagram.com">My Account</a> |
+        <a href="https://www.google.com">Sign In</a>
+    </div>
+</div>
+<footer>
+    <h3 style="color: antiquewhite;">&copy; All Rights are Reserved</h3>
+</footer>  
+<script>
+let currentQuestion = 1;
+const totalQuestions = 5;
+let selectedAnswers = {}; // Object to store selected answers
+
+function showQuestion(questionNumber) {
+    for (let i = 1; i <= totalQuestions; i++) {
+        document.getElementById('question' + i).style.display = 'none';
+    }
+    document.getElementById('question' + questionNumber).style.display = 'block';
+}
+
+function next() {
+    const selectedOption = document.querySelector('input[name="q' + currentQuestion + '"]:checked');
+    
+    if (!selectedOption) {
+        alert('Please select an option before proceeding.');
+        return;
+    }
+
+    // Save the selected answer
+    selectedAnswers['q' + currentQuestion] = selectedOption.nextSibling.textContent.trim();
+
+    if (currentQuestion < totalQuestions) {
+        currentQuestion++;
+        showQuestion(currentQuestion);
+    } else {
+        displayResults();
+    }
+}
+
+function displayResults() {
+    let resultHTML = '<h3>Your Selected Answers</h3><ul>';
+    for (let i = 1; i <= totalQuestions; i++) {
+        resultHTML += `<li>Question ${i}: ${selectedAnswers['q' + i]}</li>`;
+    }
+    resultHTML += '</ul>';
+    document.getElementById('result').innerHTML = resultHTML;
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('nextBtn').style.display = 'none'; // Hide the Next button
+}
+
+function retakeQuiz() {
+    for (let i = 1; i <= totalQuestions; i++) {
+        const options = document.querySelectorAll('input[name="q' + i + '"]');
+        for (let j = 0; j < options.length; j++) {
+            options[j].checked = false;
+        }
+    }
+
+    selectedAnswers = {}; // Reset answers
+    currentQuestion = 1;
+    document.getElementById('result').style.display = 'none';
+    document.getElementById('nextBtn').style.display = 'block'; // Show the Next button
+    showQuestion(currentQuestion);
+}
+
+// Initialize the first question
+showQuestion(currentQuestion);
+</script>
+</body>
+</html>

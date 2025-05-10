@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OxyFyKin Fitness</title>
+  <!-- Google Fonts -->
+   
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --primary: #FF6B35;
+      --secondary: #2EC4B6;
+      --dark: #1A2930;
+      --dark-alt: #0A1612;
+      --light: #FDFFFC;
+    }
+
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--dark-alt);
+      color: var(--light);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: var(--light);
+    }
+
+    /* Navbar */
+    .navbar {
+        background-color: #111827;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background: linear-gradient(135deg, var(--dark), var(--dark-alt));
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--primary);
+    }
+
+    .navbar .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .navbar .nav-links a {
+      color: var(--light);
+      font-weight: 600;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .navbar .nav-links a:hover {
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+    .navbar img {
+    width: 80px;  /* Set the desired smaller size */
+    height: 80px; /* Make it a square */
+    border-radius: 50%;  /* Circular shape */
+    object-fit: cover; 
+    border: 2px solid #22d3ee; /* Ensures the image fits within the circle without distortion */
+}
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--dark), var(--dark-alt));
+      color: var(--light);
+      padding: 140px 10%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 10px;
+      animation: slideIn 1.5s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero .cta-button {
+      background: var(--primary);
+      color: var(--light);
+      padding: 15px 30px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+      animation: bounce 2s infinite;
+    }
+
+    .hero .cta-button:hover {
+      background: var(--secondary);
+      transform: scale(1.1);
+    }
+
+    /* Featured Articles */
+    .featured-articles {
+      padding: 80px 10%;
+      background: var(--dark);
+    }
+
+    .featured-articles h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .featured-articles h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .article-card {
+      background: var(--dark-alt);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .article-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .article-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .article-card .content {
+      padding: 20px;
+    }
+
+    .article-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .article-card p {
+      font-size: 1rem;
+      color: var(--light);
+    }
+
+    .article-card a {
+      display: inline-block;
+      margin-top: 15px;
+      color: var(--secondary);
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .article-card a:hover {
+      color: var(--primary);
+    }
+
+    /* Blog Section */
+    .blog-section {
+      padding: 80px 10%;
+      background: var(--dark);
+    }
+
+    .blog-section h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .blog-section h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .blog-posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .blog-post {
+      background: var(--dark-alt);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .blog-post:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .blog-post img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .blog-post .content {
+      padding: 20px;
+    }
+
+    .blog-post h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .blog-post p {
+      font-size: 1rem;
+      color: var(--light);
+    }
+
+    .blog-post a {
+      display: inline-block;
+      margin-top: 15px;
+      color: var(--secondary);
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .blog-post a:hover {
+      color: var(--primary);
+    }
+
+    /* Animations */
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0A1612;
+      color: var(--light);
+      text-align: center;
+      padding: 20px 10%;
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+
+
+<body>
+  
+
+  <nav class="navbar" style="background-color: #111827">
+    <img src="fit icon.jpeg" alt="KashGoals Icon" class="favicon">
+    <div class="logo">OxyFyKin</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#blog">Blog</a>
+      <a href="#articles">Articles</a>
+      <a href="bmi.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1>Transform Your Body, Transform Your Life</h1>
+    <p>Join thousands of people achieving their fitness goals with our proven programs.</p>
+    <button class="cta-button"><a href="p3.html" > Get Started</a></button>
+  </section>
+
+  <!-- Featured Articles -->
+  <section id="articles" class="featured-articles">
+    <h2>Featured Articles</h2>
+    <div class="articles-grid">
+      <div class="article-card">
+        <img src="yogss.jpeg" alt="Article 1">
+        <div class="content">
+          <h3>Top 10 myths to avoid in fitness goal</h3>
+          <p>Learn the best strategies to lose weight effectively.</p>
+          <a href="slider.html">Read More</a>
+        </div>
+      </div>
+      <div class="article-card">
+        <img src="cardio.jpeg" alt="Article 2">
+        <div class="content">
+          <h3>workout routines</h3>
+          <p>Discover how yoga can improve your physical and mental health.</p>
+          <a href="slider.html">Read More</a>
+        </div>
+      </div>
+      <div class="article-card">
+        <img src="deadbugs.jpeg" alt="Article 3">
+        <div class="content">
+          <h3>recovery and rest</h3>
+          <p>Tips to keep yourself motivated and recovered from unhealthy life on your fitness journey.</p>
+          <a href="slider.html">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="blog-section">
+    <h2>Fitness Blog</h2>
+    <div class="blog-posts">
+      <div class="blog-post">
+        <img src="atheletic.jpeg" alt="Blog Post 1">
+        <div class="content">
+          <h3>Top 10 Tips for Weight Loss</h3>
+          <p>Learn the best strategies to lose weight effectively.</p>
+          <a href="slider.html">Read More</a>
+        </div>
+      </div>
+      <div class="blog-post">
+        <img src="yoga.jpeg" alt="Blog Post 2">
+        <div class="content">
+          <h3>The Benefits of Yoga</h3>
+          <p>Discover how yoga can improve your physical and mental health.</p>
+          <a href="slider.html">Read More</a>
+        </div>
+      </div>
+      <div class="blog-post">
+        <img src="meditation.jpeg" alt="Blog Post 3">
+        <div class="content">
+          <h3>How to Stay Motivated</h3>
+          <p>Tips to keep yourself motivated on your fitness journey.</p>
+          <a href="slider.html">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 OxyFyKin Fitness. All rights reserved.</p>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Smooth scrolling
+      $('a[href^="#"]').on('click', function(event) {
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: $($(this).attr('href')).offset().top
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+</html>

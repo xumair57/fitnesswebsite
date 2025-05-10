@@ -1,0 +1,302 @@
+body { 
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #1e293b, #0f172a); /* Gradient background */
+    color: #e5e7eb;
+}
+
+.center {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+header, footer {
+    background: #111827; /* Darker background for header and footer */
+    color: #f3f4f6; /* Light text */
+    width: 100%;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+}
+
+header h2 {
+
+    font-size: 32px;
+    color: #22d3ee; /* Highlighted logo text */
+    font-weight: 700;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+header:hover {
+    background: rgba(17, 24, 39, 0.9); /* Slightly darker on hover */
+    padding: 20px 0; 
+    transition: background 0.3s ease; 
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #a5b4fc; /* Muted blue links */
+    font-size: 18px;
+    padding: 0 15px;
+    text-transform: capitalize;
+    transition: color 0.3s ease;
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;           
+    left: 50%;         
+    transform: translate(-50%, -50%); 
+    color:#e5e7eb;       
+    font-size: 2.5rem;  
+    text-align: center; 
+    z-index: 3;         
+}
+
+/* CSS for circular icon */
+header img {
+    width: 80px;  /* Set the desired smaller size */
+    height: 80px; /* Make it a square */
+    border-radius: 50%;  /* Circular shape */
+    object-fit: cover; 
+    border: 2px solid #22d3ee; /* Ensures the image fits within the circle without distortion */
+}
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    image-rendering: crisp-edges;
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    background-color: #fc7304;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+.hero button:hover {
+    background-color: #e64a19;
+}
+
+/* Feature Section */
+.features {
+    padding: 60px 30px;
+    display: flex;
+    justify-content: space-around;
+    background: #f3f4f6; /* Light gray background */
+    color: #111827;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px;
+    background: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature img {
+    width: 250px;
+    height: 160px;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #0a2561;
+}
+
+.feature p {
+    color: #374151;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  .image-container {
+    width: 60%;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .details-container {
+    width: 60%;
+    padding: 20px;
+  }
+  h1 {
+    font-weight: bold;
+    font-size: 35px;
+    text-align: left;
+    color: rgb(10, 9, 9);
+    margin-left: 7%;
+    margin-top: 1%;
+}
+
+h3 {
+    font-size: 15px;
+    letter-spacing: 2px;
+    line-height: 45px;
+    color: rgb(19, 13, 13);
+    margin-left: 7%;
+    font-weight: bold;
+}
+
+h3 span, h1 span {
+    color: #d33f12}
+    .pre-footer {
+        height: 54px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 30px;
+        background: #1e293b;
+        color: #f3f4f6;
+        border-top: 2px solid #374151;
+    }
+    
+    .pre-footer .logo img {
+        max-width: 100px;
+        width: 100%;
+    }
+    
+    .pre-footer div {
+        text-align: center;
+    }
+    
+    .pre-footer a {
+        text-decoration: none;
+        color: whitesmoke;
+        width: 100%;
+    }
+    
+    .pre-footer a:hover {
+        color: rgb(30, 67, 230);
+        width: 100%;
+    }
+    
+    .football-collection {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .football-item {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow:#101314 ;
+        padding: 20px;
+        text-align: center;
+        transition: box-shadow 0.3s ease;
+        width: 22%;
+    }
+    
+    .football-item:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .football-item img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+    
+    .football-info {
+        margin-top: 15px;
+    }
+    
+    .football-info p {
+        font-size: 14px;
+        color: #999;
+    }
+    
+    .football-info h4 {
+        font-size: 18px;
+        color:#101314;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    .icon-left,  .cart-icon {
+        font-size: 24px;
+        color: goldenrod;
+        margin: 0 10px;
+        transition: color 0.3s;
+    }
+    
+    .icon-left a,  .cart-icon a {
+        text-decoration: none;
+        color: goldenrod;
+    }
+    
+    .icon-left a:hover, .cart-icon a:hover {
+        color: #007bff;
+    }
+    
+    
